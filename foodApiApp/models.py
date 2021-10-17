@@ -55,6 +55,7 @@ class MostPopular(models.Model):
 
 #6 Customer Model
 class Customer(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=50)
     email  = models.EmailField(max_length=100)
     phoneNumber = models.CharField(max_length=20)

@@ -57,7 +57,7 @@ class Saydur(views.APIView):
 
     def get(self, request):
         request.user
-        customer = Customer.objects.all().first()
+        customer = Customer.objects.get(user=request.user)
         category = customer.order_set.all().first().orderitem.food.catagory
         # catagory = Food.objects.catagory
         mostPopular = MostPopular.objects.all()
